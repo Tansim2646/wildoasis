@@ -52,5 +52,5 @@ export default function Filter({ fieldValue, options }) {
         </FilterButton>
       ))}
     </StyledFilter>
-  );
+  ); 
 }

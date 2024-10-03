@@ -1,4 +1,4 @@
-import { formatDistance, parseISO } from "date-fns";
+import { formatDistance, parseISO, toDate } from "date-fns";
 import { differenceInDays } from "date-fns";
 export const subtractDates = (dateStr1, dateStr2) =>
   differenceInDays(parseISO(dateStr1), parseISO(dateStr2));
@@ -13,10 +13,10 @@ export const formatCurrency = (value) => {
     currency: "USD",
   }).format(value);
 };
-export const serverResponseMimic = async (data) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(data);
-    }, 2000);
-  });
-};
+export function getToday(options = {}){
+  const today = new Date();
+  if(options?.end)
+     today.setUTCHours(23,59,59,999);
+  today.setUTCHours(0,0,0,0);
+  return today.toISOString();
+}

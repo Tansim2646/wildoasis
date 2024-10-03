@@ -8,10 +8,7 @@ const StyledDashBoardLayout = styled.div`
 export default function DashBoardLayout({ children }) {
   return (
     <StyledDashBoardLayout>
-      <div>Statistcs</div>
-      <div>Today's Activity</div>
-      <div>Chart Stay duration</div>
-      <div>Chart Sales</div>
+      {children}
     </StyledDashBoardLayout>
   );
 }
